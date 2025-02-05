@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo "Compile main.c"
-gcc -c -Wall -m64 -no-pie -o main.o main.c -std=c17
+echo "Remove unnecessary files"
+rm -f main.o main.out
 
-echo "Link the object files"
-gcc -m64 -no-pie -o main.out main.o -std=c17
+echo "Compile main.c"
+gcc -Wall -m64 -no-pie -o main.out main.c -std=c17 -fno-use-linker-plugin
 
 #Make sure the executable has permission to execute
 chmod u+x main.out
