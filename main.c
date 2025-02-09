@@ -1,12 +1,11 @@
 /*
  * Name: Ethan Rios
+ * CWID: 880071006
  * Email: eirios@csu.fullerton.edu
- * CWID: 008871006
 */
 
 // TITLE: CPSC 223C Assingment 1 >>> Chemistry
 // "./a1.sh" in terminal will run bash program!!
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,8 +22,8 @@ int main() {
     time_t current_time = time(NULL);
     struct tm * broken = localtime(&current_time);
 
-    printf("Welcome to Modern Chemistry brought to by Chief Software Engineer Ethan Rios\n");
-    printf("The time is now %04d %s %02d @ %02d:%02d%s\n",
+    printf("\nWelcome to Modern Chemistry brought to by Chief Software Engineer Ethan Rios.\n");
+    printf("The time is now %04d %s %02d @ %02d:%02d%s.\n\n",
                                         broken->tm_year+1900, // Year
                                         (char*[]) {"January", "February", "March", "April", "May", "June", "July", 
                                         "August", "September", "October", "November", "December"} [broken->tm_mon], // Printed out month
@@ -48,7 +47,7 @@ int main() {
     trim(user_title);
 
     // Print users title and name
-    printf("Thank you %s %s\n", user_title, user_name);
+    printf("\nThank you %s %s.\n\n", user_title, user_name);
 
     // Create volume and alcohol variables that user 
     // will use to enter their values of choice
@@ -85,7 +84,7 @@ int main() {
     fgets(alc3, 10, stdin);
     trim(alc3);
 
-    printf("Thank you for entering these data. The results are being computed.\n");
+    printf("\nThank you for entering the data. The results are being computed.\n\n");
 
     // Take the users inputted values and use strtod() to convert them to doubles
     double volume1 = strtod(vol1, NULL);
@@ -104,7 +103,7 @@ int main() {
 
     current_time = time(NULL);  // Get new current time
     broken = localtime(&current_time);  // Update broken time 
-    printf("The time is now %04d %s %02d @ %02d:%02d%s\n",
+    printf("The time is now %04d %s %02d @ %02d:%02d%s.\n",
                                         broken->tm_year+1900, // Year
                                         (char*[]) {"January", "February", "March", "April", "May", "June", "July", 
                                         "August", "September", "October", "November", "December"} [broken->tm_mon], // Printed out month
@@ -117,8 +116,8 @@ int main() {
     printf("The time since the epoch is now %ld seconds.\n", current_time);
 
     // Conclusion
-    printf("Have a good day %s %s\n", user_title, user_name);
-    printf("A zero will be returned to the operating system\n");
+    printf("Have a good day %s %s.\n", user_title, user_name);
+    printf("A zero will be returned to the operating system.\n\n");
     printf("==================================== End of execution ====================================\n");
     
     return 0;
